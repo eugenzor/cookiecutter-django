@@ -40,7 +40,7 @@ def get_random_string(
         return ''.join(random.choice(allowed_chars) for i in range(length))
     print(
         "Cookiecutter Django couldn't find a secure pseudo-random number generator on your system."
-        " Please change change your SECRET_KEY variables in conf/settings/local.py and env.example"
+        " Please change change your SECRET_KEY variables in conf/settings/development.py and env.example"
         " manually."
     )
     return "CHANGEME!!"
@@ -67,10 +67,10 @@ def make_secret_key(project_directory):
     # Determine the local_setting_file_location
     local_setting = os.path.join(
         project_directory,
-        'config/settings/local.py'
+        'config/settings/development.py'
     )
 
-    # local.py settings file
+    # development.py settings file
     set_secret_key(local_setting)
 
     env_file = os.path.join(

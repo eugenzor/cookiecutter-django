@@ -66,6 +66,14 @@ DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TEMPLATE_CONTEXT': True,
 }
 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': str(BASE_DIR.path('db.sqlite3')),
+    }
+}
+
 # django-extensions
 # ------------------------------------------------------------------------------
 INSTALLED_APPS += ('django_extensions', )
@@ -81,3 +89,9 @@ CELERY_ALWAYS_EAGER = True
 {% endif %}
 # Your local stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
+
+
+try:
+    from .development_local import *  # pylint: disable=wildcard-import, unused-wildcard-import
+except ImportError:
+    pass
