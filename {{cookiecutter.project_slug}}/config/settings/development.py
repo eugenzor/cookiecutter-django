@@ -70,7 +70,7 @@ DEBUG_TOOLBAR_CONFIG = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(BASE_DIR.path('db.sqlite3')),
+        'NAME': str(ROOT_DIR.path('db.sqlite3')),
     }
 }
 

@@ -1,5 +1,10 @@
 [run]
-include = {{cookiecutter.project_slug}}/*
-omit = *migrations*, *tests*
+
+omit = 
+    *migrations*, 
+    *tests*,
+    *wsgi.py,
+    manage.py,
+    *settings*
 plugins =
     django_coverage_plugin
