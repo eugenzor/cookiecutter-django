@@ -57,5 +57,5 @@ node_modules/
 mailhog
 {% endif %}
 
-static/
+/static/
 db.sqlite3
